@@ -1,0 +1,301 @@
+{% extends "root/default.html" %}
+
+{% block title %}
+Services | Rosaria Banking
+{% endblock %}
+
+{% block content %}
+
+<!--/header-->
+<div class="inner-banner">
+</div>
+
+<section class="w3l-breadcrumb">
+    <div class="container">
+        <ul class="breadcrumbs-custom-path">
+            <li><a href="{{ url_for('home_page') }}">Home</a></li>
+            <li class="active">
+                <span class="fa fa-arrow-right mx-2" aria-hidden="true"></span>
+                Services
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- Services Intro -->
+<section class="w3l-services py-5">
+    <div class="container py-lg-5 py-md-4 py-2">
+
+        <div class="row bottom-ab-grids">
+
+            <div class="col-lg-6 bottom-ab-left align-self">
+
+                <h3 class="title-big mb-4">
+                    Banking Services Designed Around Your Financial Needs
+                </h3>
+
+                <p>
+                    Rosaria Banking provides secure, reliable, and customer-focused
+                    banking solutions for individuals, families, and businesses
+                    throughout the United Kingdom. Our services are designed to
+                    simplify everyday banking while supporting long-term financial success.
+                </p>
+
+                <div class="cont-4 mt-lg-5 mt-4">
+
+                    <div class="list mb-4">
+                        <span class="fa fa-check"></span>
+                        <div class="list-info">
+                            <h4>Personal Banking</h4>
+                            <p>
+                                Manage your money confidently with current accounts,
+                                savings options, secure payments, and digital banking tools.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="list">
+                        <span class="fa fa-check"></span>
+                        <div class="list-info">
+                            <h4>Business Banking</h4>
+                            <p>
+                                Banking services tailored to support businesses with
+                                account management, payments, and financial growth.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6 bottom-right-grids mt-lg-0 mt-5">
+                <img src="../../static/root/assets/images/services.jpg"
+                     alt="Rosaria Banking Services"
+                     class="radius-image img-fluid">
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Features -->
+<section class="w3l-content-4 py-5" id="features">
+
+    <div class="content-4-main py-lg-5 py-md-4 py-2">
+
+        <div class="container">
+
+            <div class="content-info-in row">
+
+                <div class="content-left col-lg-6">
+
+                    <h3 class="title-small">Our Features</h3>
+
+                    <h3 class="title-big">
+                        Secure Banking with Modern Digital Solutions
+                    </h3>
+
+                    <p class="mt-4">
+                        At Rosaria Banking, we combine traditional banking values
+                        with modern technology to deliver a secure and convenient
+                        banking experience. Our goal is to provide easy access to
+                        financial services while maintaining the highest standards
+                        of customer care and account security.
+                    </p>
+
+                    <a class="btn btn-style btn-primary mt-md-5 mt-4"
+                       href="{{ url_for('about_page') }}">
+                        Learn More
+                    </a>
+
+                </div>
+
+                <div class="content-right col-lg-6 pl-lg-4 mt-lg-0 mt-md-5 mt-5">
+
+                    <div class="row content4-right-grids mb-lg-5 mb-4">
+
+                        <div class="col-2 content4-right-icon">
+                            <div class="content4-icon">
+                                <span class="fa fa-cogs"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-10 content4-right-info">
+                            <h6><a href="#url">Digital Banking</a></h6>
+                            <p>
+                                Access accounts, make transfers, and manage finances
+                                securely from any device.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="row content4-right-grids mb-lg-5 mb-4">
+
+                        <div class="col-2 content4-right-icon">
+                            <div class="content4-icon">
+                                <span class="fa fa-clock-o"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-10 content4-right-info">
+                            <h6><a href="#url">Fast & Convenient</a></h6>
+                            <p>
+                                Quick account access and efficient banking tools
+                                designed to save time and simplify banking.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="row content4-right-grids">
+
+                        <div class="col-2 content4-right-icon">
+                            <div class="content4-icon">
+                                <span class="fa fa-thumbs-up"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-10 content4-right-info">
+                            <h6><a href="#url">Dedicated Support</a></h6>
+                            <p>
+                                Friendly customer service available to assist with
+                                banking enquiries and account support.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Services Grid -->
+<section class="w3l-bottom-grids-6 w3l-services py-5" id="services">
+
+    <div class="container py-lg-5 py-md-4">
+
+        <h6 class="title-small text-center">Our Services</h6>
+
+        <h3 class="title-big mb-md-5 mb-4 text-center">
+            Banking Solutions for Every Customer
+        </h3>
+
+        <div class="grids-area-hny main-cont-wthree-fea row">
+
+            <div class="col-lg-4 col-md-6 grids-feature">
+                <div class="area-box">
+                    <span class="fa fa-dollar mt-0"></span>
+                    <h4><a href="#feature" class="title-head">Personal Banking</a></h4>
+                    <p>
+                        Everyday banking services including current accounts,
+                        savings accounts, and secure payment solutions.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 grids-feature mt-md-0 mt-4">
+                <div class="area-box">
+                    <span class="fa fa-building mt-0"></span>
+                    <h4><a href="#feature" class="title-head">Business Banking</a></h4>
+                    <p>
+                        Flexible banking services for businesses including
+                        account management and payment processing.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 grids-feature mt-lg-0 mt-4">
+                <div class="area-box">
+                    <span class="fa fa-line-chart mt-0"></span>
+                    <h4><a href="#feature" class="title-head">Savings Solutions</a></h4>
+                    <p>
+                        Savings products designed to help customers build
+                        financial stability and future security.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 grids-feature mt-lg-5 mt-4">
+                <div class="area-box">
+                    <span class="fa fa-laptop mt-0"></span>
+                    <h4><a href="#feature" class="title-head">Online Banking</a></h4>
+                    <p>
+                        Secure access to your accounts, transactions,
+                        statements, and banking services anytime.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 grids-feature mt-lg-5 mt-4">
+                <div class="area-box">
+                    <span class="fa fa-money mt-0"></span>
+                    <h4><a href="#feature" class="title-head">Loans & Financing</a></h4>
+                    <p>
+                        Personal and business financing options designed
+                        to support growth and financial opportunities.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 grids-feature mt-lg-5 mt-4">
+                <div class="area-box">
+                    <span class="fa fa-credit-card mt-0"></span>
+                    <h4><a href="#feature" class="title-head">Debit & Banking Cards</a></h4>
+                    <p>
+                        Convenient and secure banking cards for everyday
+                        spending, payments, and cash withdrawals.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Contact CTA -->
+<div class="middle py-5" id="call">
+
+    <div class="container py-lg-3">
+
+        <div class="welcome-left text-center py-md-5 py-3">
+
+            <h3 class="title-big">
+                Need Help Choosing the Right Banking Service?
+            </h3>
+
+            <h3 class="mt-4">
+                Call Us :
+                <a href="tel:+442071234567">
+                    +44 20 7123 4567
+                </a>
+            </h3>
+
+            <p class="mt-4">
+                Our customer support team is ready to assist with account
+                enquiries, banking services, digital banking support,
+                and general financial information.
+            </p>
+
+            <a href="{{ url_for('contact_page') }}"
+               class="btn btn-style btn-primary mt-sm-5 mt-4 mr-2">
+                Contact Us
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,107 @@
+{% extends 'user/default.html' %}
+
+{% block title %}
+Transfer Funds | Rosaria Banking
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-6">
+
+            <div class="card shadow border-0">
+
+                <div class="card-header bg-primary text-white text-center">
+
+                    <h4 class="mb-0">
+                        Transfer Funds
+                    </h4>
+
+                </div>
+
+                <div class="card-body p-4">
+
+                    <p class="text-muted text-center mb-4">
+                        Send money securely from your Rosaria Banking account.
+                        Please check the recipient details carefully before submitting.
+                    </p>
+
+                    <form action="{{ url_for('transfer') }}" method="post">
+
+                        <div class="mb-3">
+
+                            <label class="form-label fw-bold">
+                                Recipient Account Name
+                            </label>
+
+                            <input class="form-control"
+                                   type="text"
+                                   name="card_name"
+                                   placeholder="Recipient full name"
+                                   required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label fw-bold">
+                                Recipient Account / Card Number
+                            </label>
+
+                            <input class="form-control"
+                                   type="text"
+                                   name="card_number"
+                                   placeholder="1234 5678 9012 3456"
+                                   required>
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label class="form-label fw-bold">
+                                Transfer Amount (£)
+                            </label>
+
+                            <input class="form-control"
+                                   type="number"
+                                   name="amount"
+                                   min="1"
+                                   step="1"
+                                   placeholder="100"
+                                   required>
+
+                        </div>
+
+                        <div class="d-grid">
+
+                            <button class="btn btn-primary btn-lg"
+                                    type="submit">
+                                Send Payment
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <div class="card-footer text-center bg-light">
+
+                    <small class="text-muted">
+                        Transfers are processed securely through Rosaria Banking.
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

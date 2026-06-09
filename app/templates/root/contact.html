@@ -1,0 +1,143 @@
+{% extends "root/default.html" %}
+
+{% block title %}
+
+Contact Us | Rosaria Banking
+
+{% endblock %}
+
+{% block content %}
+
+<div class="inner-banner">
+</div>
+
+<section class="w3l-breadcrumb">
+    <div class="container">
+        <ul class="breadcrumbs-custom-path">
+            <li><a href="index.html">Home</a></li>
+            <li class="active">
+                <span class="fa fa-arrow-right mx-2" aria-hidden="true"></span>
+                Contact Us
+            </li>
+        </ul>
+    </div>
+</section>
+
+<div class="w3l-contact-info py-5" id="contact">
+    <div class="container py-lg-5 py-md-4">
+
+    <div class="title text-center">
+        <h3 class="title-big">Get in Touch with Rosaria Banking</h3>
+        <p class="mt-2 mx-lg-5">
+            Our dedicated customer support team is here to assist you with personal banking,
+            business banking, account enquiries, loans, digital banking services, and general
+            financial support. We look forward to helping you achieve your financial goals.
+        </p>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+        </div>
+
+        <div class="align-self mt-lg-0 mt-md-5 mt-4">
+            <div class="contact-infos">
+
+                <div class="single-contact-infos">
+                    <div class="icon-box">
+                        <span class="fa fa-map-marker"></span>
+                    </div>
+                    <div class="text-box">
+                        <h3 class="mb-1">Head Office</h3>
+                        <p>Rosaria Banking, 13 Bank Lane, London, United Kingdom</p>
+                    </div>
+                </div>
+
+                <div class="single-contact-infos">
+                    <div class="icon-box">
+                        <span class="fa fa-phone"></span>
+                    </div>
+                    <div class="text-box">
+                        <h3 class="mb-1">Customer Support</h3>
+                        <p>
+                            <a href="tel:+442071234567">
+                                +44 20 7123 4567
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="single-contact-infos">
+                    <div class="icon-box">
+                        <span class="fa fa-envelope"></span>
+                    </div>
+                    <div class="text-box">
+                        <h3 class="mb-1">Email Us</h3>
+                        <p>
+                            <a href="mailto:support@rosariabanking.co.uk">
+                                support@rosariabanking.co.uk
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+
+        <div class="col-lg-6 map">
+            <iframe
+                src="https://www.google.com/maps?q=13%20Bank%20Lane%20London%20UK&output=embed"
+                frameborder="0"
+                allowfullscreen="">
+            </iframe>
+        </div>
+
+        <div class="col-lg-6 form-inner-cont mt-lg-0 mt-sm-5 mt-4">
+
+            <form action="https://sendmail.w3layouts.com/submitForm"
+                  method="post"
+                  class="signin-form">
+
+                <div class="form-input">
+                    <input type="text"
+                           name="w3lName"
+                           id="w3lName"
+                           placeholder="Full Name"
+                           required="">
+                </div>
+
+                <div class="form-input">
+                    <input type="email"
+                           name="w3lSender"
+                           id="w3lSender"
+                           placeholder="Email Address"
+                           required="">
+                </div>
+
+                <div class="form-input">
+                    <textarea name="w3lMessage"
+                              id="w3lMessage"
+                              placeholder="How can we help you today?"
+                              required=""></textarea>
+                </div>
+
+                <div class="text-right">
+                    <button type="submit"
+                            class="btn btn-style btn-primary">
+                        Send Message
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+{% endblock %}

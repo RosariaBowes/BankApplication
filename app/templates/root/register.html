@@ -1,0 +1,154 @@
+{% extends 'root/default.html' %}
+
+{% block title %}
+Open an Account | Rosaria Banking
+{% endblock %}
+
+{% block content %}
+
+<section>
+    <div class="inner-banner">
+    </div>
+
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+
+            <div class="col col-xl-10">
+
+                <div class="card shadow" style="border-radius: 1rem;">
+
+                    <div class="row g-0">
+
+                        <div class="col-md-6 col-lg-5 d-none d-md-block">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+                                 alt="Rosaria Banking Registration"
+                                 class="img-fluid"
+                                 style="border-radius: 1rem 0 0 1rem; height:100%; object-fit:cover;" />
+                        </div>
+
+                        <div class="col-md-6 col-lg-7 d-flex align-items-center">
+
+                            <div class="card-body p-4 p-lg-5 text-black">
+
+                                <form method="POST">
+
+                                    <div class="d-flex align-items-center mb-3 pb-1">
+                                        <span class="fa fa-university fa-2x me-3"></span>
+                                        <span class="h2 fw-bold mb-0">
+                                            Rosaria Banking
+                                        </span>
+                                    </div>
+
+                                    <h5 class="fw-normal mb-3 pb-3"
+                                        style="letter-spacing:1px;">
+                                        Open Your Rosaria Banking Account
+                                    </h5>
+
+                                    <p class="text-muted mb-4">
+                                        Join Rosaria Banking today and gain access to secure
+                                        digital banking, account management tools, and banking
+                                        services designed for individuals and businesses across
+                                        the United Kingdom.
+                                    </p>
+
+                                    <div class="form-outline mb-4">
+                                        <input type="text"
+                                               name="full_name"
+                                               class="form-control form-control-lg"
+                                               placeholder="Enter your full name"
+                                               required />
+                                        <label class="form-label">
+                                            Full Name
+                                        </label>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input type="email"
+                                               name="email"
+                                               class="form-control form-control-lg"
+                                               placeholder="Enter your email address"
+                                               required />
+                                        <label class="form-label">
+                                            Email Address
+                                        </label>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input type="password"
+                                               name="password"
+                                               class="form-control form-control-lg"
+                                               placeholder="Create a secure password"
+                                               required />
+                                        <label class="form-label">
+                                            Password
+                                        </label>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input type="password"
+                                               name="confirm_password"
+                                               class="form-control form-control-lg"
+                                               placeholder="Confirm your password"
+                                               required />
+                                        <label class="form-label">
+                                            Confirm Password
+                                        </label>
+                                    </div>
+
+                                    <div class="pt-1 mb-4">
+                                        <button class="btn btn-primary btn-lg btn-block w-100"
+                                                type="submit">
+                                            Open Account
+                                        </button>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <a class="small text-muted" href="#">
+                                            Need help registering?
+                                        </a>
+                                    </div>
+
+                                    <p class="mt-4 text-center" style="color:#393f81;">
+                                        Already have an account?
+                                        <a href="{{ url_for('login') }}"
+                                           style="color:#393f81;font-weight:600;">
+                                            Sign In
+                                        </a>
+                                    </p>
+
+                                    <hr>
+
+                                    <div class="text-center">
+                                        <a href="#" class="small text-muted me-3">
+                                            Terms & Conditions
+                                        </a>
+
+                                        <a href="#" class="small text-muted">
+                                            Privacy Policy
+                                        </a>
+                                    </div>
+
+                                    <div class="mt-4 text-center">
+                                        <small class="text-muted">
+                                            Rosaria Banking • 13 Bank Lane, London, United Kingdom
+                                        </small>
+                                    </div>
+
+                                </form>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}

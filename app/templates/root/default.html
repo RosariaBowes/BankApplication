@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <link href="//fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/root/assets/css/style-starter.css">
+    <link rel="stylesheet" href="../../static/root/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../../static/root/assets/css/owl.theme.default.min.css">
+</head>
+
+<body>
+
+<header id="site-header">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg stroke px-0">
+
+            <h1>
+                <a class="navbar-brand" href="{{ url_for('home_page') }}">
+                    <span class="fa fa-university"></span>
+                    Rosaria Banking
+                </a>
+            </h1>
+
+            <button class="navbar-toggler collapsed bg-gradient"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarTogglerDemo02">
+                <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav ml-auto align-items-center">
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.endpoint == 'home_page' %}active{% endif %}"
+                           href="{{ url_for('home_page') }}">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.endpoint == 'about_page' %}active{% endif %}"
+                           href="{{ url_for('about_page') }}">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.endpoint == 'services_page' %}active{% endif %}"
+                           href="{{ url_for('services_page') }}">Services</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.endpoint == 'contact_page' %}active{% endif %}"
+                           href="{{ url_for('contact_page') }}">Contact</a>
+                    </li>
+
+                    <li class="nav-item ml-lg-3">
+                        <a href="{{ url_for('login') }}" class="btn btn-style btn-primary">
+                            Online Banking
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </nav>
+    </div>
+</header>
+
+{% block content %}
+{% endblock %}
+
+<section class="w3l-footer-29-main">
+    <div class="footer-29 py-5">
+        <div class="container py-lg-4">
+            <div class="row footer-top-29">
+
+                <div class="col-lg-4 col-md-6 footer-list-29 footer-1 pr-lg-5">
+                    <div class="footer-logo mb-4">
+                        <a class="navbar-brand" href="{{ url_for('home_page') }}">
+                            <span class="fa fa-university"></span>
+                            Rosaria Banking
+                        </a>
+                    </div>
+                    <p>
+                        Rosaria Banking is committed to providing secure, reliable,
+                        and customer-focused banking services throughout the United Kingdom.
+                    </p>
+                </div>
+
+                <div class="col-lg-2 col-md-6 col-sm-5 col-5 footer-list-29 footer-2 mt-md-0 mt-5">
+                    <h6 class="footer-title-29">Quick Links</h6>
+                    <ul>
+                        <li><a href="{{ url_for('about_page') }}">About Us</a></li>
+                        <li><a href="{{ url_for('services_page') }}">Banking Services</a></li>
+                        <li><a href="{{ url_for('contact_page') }}">Contact Us</a></li>
+                        <li><a href="{{ url_for('login') }}">Online Banking</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-7 col-7 footer-list-29 footer-3 mt-lg-0 mt-5">
+                    <h6 class="footer-title-29">Head Office</h6>
+                    <p>Rosaria Banking<br>13 Bank Lane<br>London, United Kingdom</p>
+                    <p><span class="fa fa-phone"></span> <a href="tel:+442071234567">+44 20 7123 4567</a></p>
+                    <p><span class="fa fa-envelope-o"></span> <a href="mailto:support@rosariabanking.co.uk">support@rosariabanking.co.uk</a></p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-list-29 footer-4 mt-lg-0 mt-5">
+                    <h6 class="footer-title-29">Latest News</h6>
+                    <div class="post1">
+                        <a href="#" class="post-title">Understanding Secure Online Banking in 2026</a>
+                        <p class="small">June 2026</p>
+                    </div>
+                    <div class="post1 mt-4">
+                        <a href="#" class="post-title">Financial Planning Tips for UK Households</a>
+                        <p class="small">June 2026</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <section class="w3l-copyright text-center">
+        <div class="container">
+            <p class="copy-footer-29">© 2026 Rosaria Banking. All Rights Reserved.</p>
+        </div>
+    </section>
+</section>
+
+<script src="../../static/root/assets/js/jquery-3.3.1.min.js"></script>
+<script src="../../static/root/assets/js/theme-change.js"></script>
+<script src="../../static/root/assets/js/circles.js"></script>
+<script src="../../static/root/assets/js/jquery.waypoints.min.js"></script>
+<script src="../../static/root/assets/js/jquery.countup.js"></script>
+<script src="../../static/root/assets/js/owl.carousel.js"></script>
+<script src="../../static/root/assets/js/bootstrap.min.js"></script>
+
+<script>
+    $('.counter').countUp();
+
+    $(document).ready(function () {
+        $('.owl-one').owlCarousel({
+            loop: true,
+            margin: 0,
+            nav: false,
+            responsiveClass: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplaySpeed: 1000,
+            autoplayHoverPause: false,
+            responsive: {
+                0: { items: 1 },
+                480: { items: 1 },
+                667: { items: 1 },
+                1000: { items: 1 }
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
+

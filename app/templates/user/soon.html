@@ -1,0 +1,126 @@
+{% extends 'user/default.html' %}
+
+{% block title %}
+Coming Soon | Rosaria Banking
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center align-items-center">
+
+        <div class="col-lg-8 text-center">
+
+            <div class="card shadow border-0 p-5">
+
+                <h1 class="fw-bold mb-3">
+                    Coming Soon
+                </h1>
+
+                <p class="text-muted mb-4">
+                    This Rosaria Banking feature is currently being prepared.
+                    We are working to bring you a secure and reliable banking experience.
+                </p>
+
+                <div class="row text-center mb-4">
+
+                    <div class="col-6 col-md-3 mb-3">
+                        <div class="bg-light rounded p-3">
+                            <h3 id="days" class="mb-0">00</h3>
+                            <small>Days</small>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-3 mb-3">
+                        <div class="bg-light rounded p-3">
+                            <h3 id="hours" class="mb-0">00</h3>
+                            <small>Hours</small>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-3 mb-3">
+                        <div class="bg-light rounded p-3">
+                            <h3 id="minutes" class="mb-0">00</h3>
+                            <small>Minutes</small>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-3 mb-3">
+                        <div class="bg-light rounded p-3">
+                            <h3 id="seconds" class="mb-0">00</h3>
+                            <small>Seconds</small>
+                        </div>
+                    </div>
+
+                </div>
+
+                <h4 class="mb-3">
+                    Get notified when this service launches
+                </h4>
+
+                <form>
+                    <div class="input-group">
+                        <input type="email"
+                               class="form-control"
+                               placeholder="Enter your email address">
+
+                        <button type="button"
+                                class="btn btn-primary">
+                            Subscribe
+                        </button>
+                    </div>
+                </form>
+
+                <a href="{{ url_for('dashboard') }}" class="btn btn-outline-secondary mt-4">
+                    Back to Dashboard
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    let comingDate = new Date('Dec 31, 2026 09:00:00');
+
+    let d = document.getElementById('days');
+    let h = document.getElementById('hours');
+    let m = document.getElementById('minutes');
+    let s = document.getElementById('seconds');
+
+    let x = setInterval(function () {
+        let now = new Date();
+        let difference = comingDate.getTime() - now.getTime();
+
+        let days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        let hours = Math.floor(difference % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+        let minutes = Math.floor(difference % (1000 * 60 * 60) / (1000 * 60));
+        let seconds = Math.floor(difference % (1000 * 60) / 1000);
+
+        d.innerHTML = getTrueNumber(days);
+        h.innerHTML = getTrueNumber(hours);
+        m.innerHTML = getTrueNumber(minutes);
+        s.innerHTML = getTrueNumber(seconds);
+
+        if (difference < 0) {
+            clearInterval(x);
+            d.innerHTML = '00';
+            h.innerHTML = '00';
+            m.innerHTML = '00';
+            s.innerHTML = '00';
+        }
+    }, 1000);
+
+    function getTrueNumber(x) {
+        if (x < 10) {
+            return '0' + x;
+        }
+        return x;
+    }
+</script>
+
+{% endblock %}

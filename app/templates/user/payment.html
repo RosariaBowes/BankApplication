@@ -1,0 +1,234 @@
+<html style="-moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; background-color: #f4f6f9; margin: 0; padding: 0;">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="format-detection" content="telephone=no">
+
+    <title>
+        Transaction Successful | Rosaria Banking
+    </title>
+
+</head>
+
+<body bgcolor="#f4f6f9"
+      style="-moz-osx-font-smoothing: grayscale;
+             -webkit-font-smoothing: antialiased;
+             background-color: #f4f6f9;
+             margin: 0;
+             padding: 0;">
+
+    <table cellpadding="0"
+           cellspacing="0"
+           bgcolor="#f4f6f9"
+           align="center"
+           style="max-width: 700px; width:100%;">
+
+        <tr>
+            <td height="40"></td>
+        </tr>
+
+        <tr>
+
+            <td>
+
+                <table cellpadding="0"
+                       cellspacing="0"
+                       bgcolor="#ffffff"
+                       align="center"
+                       style="width:100%;
+                              border-radius:10px;
+                              box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+
+                    <!-- Header -->
+
+                    <tr>
+
+                        <td align="center"
+                            style="background:#0d1b3e;
+                                   padding:30px;
+                                   border-radius:10px 10px 0 0;">
+
+                            <h1 style="margin:0;
+                                       color:#ffffff;
+                                       font-family:Arial, Helvetica, sans-serif;
+                                       font-size:32px;">
+                                Rosaria Banking
+                            </h1>
+
+                            <p style="margin-top:10px;
+                                      color:#d9e2ff;
+                                      font-family:Arial, Helvetica, sans-serif;">
+                                Secure Online Banking
+                            </p>
+
+                        </td>
+
+                    </tr>
+
+                    <!-- Success Icon -->
+
+                    <tr>
+
+                        <td align="center" style="padding-top:40px;">
+
+                            <div style="font-size:60px;">
+                                ✅
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                    <!-- Success Title -->
+
+                    <tr>
+
+                        <td align="center">
+
+                            <h2 style="font-family:Arial, Helvetica, sans-serif;
+                                       color:#198754;
+                                       font-size:30px;
+                                       margin-bottom:0;">
+
+                                Transfer Successful
+
+                            </h2>
+
+                        </td>
+
+                    </tr>
+
+                    <!-- Message -->
+
+                    <tr>
+
+                        <td align="center"
+                            style="padding:20px 50px;">
+
+                            <p style="font-family:Arial, Helvetica, sans-serif;
+                                      color:#555555;
+                                      font-size:16px;
+                                      line-height:28px;">
+
+                                Your transaction has been processed successfully.
+
+                                A receipt is available for download and a record of
+                                this transaction has been added to your account history.
+
+                            </p>
+
+                        </td>
+
+                    </tr>
+
+                    <!-- Receipt Button -->
+
+                    <tr>
+
+                        <td align="center">
+
+                            <a href="{{ url_for('download_receipt', filename=filename) }}"
+                               download
+                               style="text-decoration:none;">
+
+                                <button style="background:#0d6efd;
+                                               color:white;
+                                               border:none;
+                                               padding:15px 35px;
+                                               border-radius:6px;
+                                               font-size:16px;
+                                               cursor:pointer;">
+
+                                    Download Receipt
+
+                                </button>
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                    <!-- Home Link -->
+
+                    <tr>
+
+                        <td align="center"
+                            style="padding-top:30px;">
+
+                            <a href="{{ url_for('dashboard') }}"
+                               style="text-decoration:none;
+                                      color:#0d6efd;
+                                      font-family:Arial, Helvetica, sans-serif;
+                                      font-weight:bold;">
+
+                                Return to Dashboard
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                    <!-- Divider -->
+
+                    <tr>
+
+                        <td style="padding:40px 50px 20px 50px;">
+
+                            <hr style="border:none;
+                                       border-top:1px solid #e5e5e5;">
+
+                        </td>
+
+                    </tr>
+
+                    <!-- Footer -->
+
+                    <tr>
+
+                        <td align="center"
+                            style="padding:0 40px 40px 40px;">
+
+                            <p style="font-family:Arial, Helvetica, sans-serif;
+                                      color:#777777;
+                                      font-size:14px;
+                                      line-height:24px;">
+
+                                Thank you for banking with Rosaria Banking.
+
+                                If you did not authorise this transaction,
+                                please contact our support team immediately.
+
+                            </p>
+
+                            <p style="font-family:Arial, Helvetica, sans-serif;
+                                      color:#999999;
+                                      font-size:12px;">
+
+                                Rosaria Banking<br>
+                                13 Bank Lane, London, United Kingdom
+
+                            </p>
+
+                        </td>
+
+                    </tr>
+
+                </table>
+
+            </td>
+
+        </tr>
+
+        <tr>
+            <td height="40"></td>
+        </tr>
+
+    </table>
+
+</body>
+
+</html>

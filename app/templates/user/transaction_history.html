@@ -1,0 +1,95 @@
+{% extends 'user/default.html' %}
+
+{% block title %}
+Transaction History | Rosaria Banking
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="row mb-4">
+
+        <div class="col">
+
+            <h1 class="fw-bold">
+                Transaction History
+            </h1>
+
+            <p class="text-muted">
+                Review your recent Rosaria Banking account activity.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="card shadow border-0">
+
+        <div class="card-header bg-primary text-white">
+
+            <h4 class="mb-0">
+                Recent Transactions
+            </h4>
+
+        </div>
+
+        <div class="card-body p-0">
+
+            <div class="table-responsive">
+
+                <table class="table table-striped table-hover mb-0">
+
+                    <thead class="table-light">
+
+                        <tr>
+                            <th>Transaction Type</th>
+                            <th>Transaction Date</th>
+                            <th>Amount</th>
+                            <th>Account / Card Number</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        {% for transaction in transactions %}
+
+                            <tr>
+                                <td>{{ transaction.type }}</td>
+                                <td>{{ transaction.timestamp }}</td>
+                                <td>£{{ transaction.amount }}</td>
+                                <td>{{ transaction.recipient_card_number }}</td>
+                            </tr>
+
+                        {% else %}
+
+                            <tr>
+                                <td colspan="4" class="text-center text-muted py-4">
+                                    No transactions available.
+                                </td>
+                            </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="mt-4">
+
+        <a href="{{ url_for('dashboard') }}" class="btn btn-outline-primary">
+            Back to Dashboard
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}
