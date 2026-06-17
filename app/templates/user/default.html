@@ -22,14 +22,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Dashboard CSS -->
-    <link href="../../static/user/assets/css/dashboard_styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='user/assets/css/dashboard_styles.css') }}?v=41">
 
 </head>
 
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <nav class="navbar navbar-expand-lg shadow-sm">
 
         <div class="container px-lg-5">
 
@@ -38,6 +38,7 @@
                 Rosaria Banking
             </a>
 
+            {#
             {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}
                     {% for category, message in messages %}
@@ -51,6 +52,7 @@
                     {% endfor %}
                 {% endif %}
             {% endwith %}
+            #}
 
             <button class="navbar-toggler"
                     type="button"
@@ -79,7 +81,7 @@
 
                     <li class="nav-item">
                         <a class="nav-link"
-                           href="#">
+                           href="{{ url_for('accounts') }}">
                             <i class="bi bi-wallet2"></i>
                             Accounts
                         </a>
@@ -87,7 +89,7 @@
 
                     <li class="nav-item">
                         <a class="nav-link"
-                           href="#">
+                           href="{{ url_for('transfer') }}">
                             <i class="bi bi-arrow-left-right"></i>
                             Transfers
                         </a>
@@ -95,7 +97,7 @@
 
                     <li class="nav-item">
                         <a class="nav-link"
-                           href="#">
+                           href="{{ url_for('cards') }}">
                             <i class="bi bi-credit-card"></i>
                             Cards
                         </a>
@@ -103,7 +105,7 @@
 
                     <li class="nav-item">
                         <a class="nav-link"
-                           href="#">
+                           href="{{ url_for('profile') }}">
                             <i class="bi bi-person-circle"></i>
                             Profile
                         </a>
@@ -115,6 +117,12 @@
                             <i class="bi bi-box-arrow-right"></i>
                             Logout
                         </a>
+                    </li>
+
+                    <li class="nav-item ms-3">
+                        <button id="theme-toggle" class="btn btn-outline-warning">
+                            🌙 Dark Mode
+                        </button>
                     </li>
 
                 </ul>
@@ -163,28 +171,109 @@
     {% block content %}
     {% endblock %}
 
-    <!-- Footer -->
-    <footer class="bg-dark text-light py-4 mt-5">
+    <section class="w3l-footer-29-main">
+    <div class="footer-29 py-5">
+        <div class="container py-lg-4">
 
-        <div class="container text-center">
+            <div class="row footer-top-29">
 
-            <p class="mb-1">
-                © 2026 Rosaria Banking. All Rights Reserved.
-            </p>
+                <div class="col-lg-4 col-md-6 footer-list-29 footer-1 pr-lg-5">
+                    <div class="footer-logo mb-4">
+                        <a class="navbar-brand" href="{{ url_for('dashboard') }}">
+                            <span class="fa fa-university"></span>
+                            Rosaria Banking
+                        </a>
+                    </div>
 
-            <small class="text-secondary">
-                Rosaria Banking • 13 Bank Lane, London, United Kingdom
-            </small>
+                    <p>
+                        Rosaria Banking is committed to providing secure, reliable,
+                        and customer-focused banking services throughout the United Kingdom.
+                    </p>
+                </div>
+
+                <div class="col-lg-2 col-md-6 footer-list-29 footer-2 mt-md-0 mt-5">
+                    <h6 class="footer-title-29">Quick Links</h6>
+                    <ul>
+                        <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                        <li><a href="{{ url_for('transfer') }}">Transfers</a></li>
+                        <li><a href="{{ url_for('transaction_history') }}">Transactions</a></li>
+                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-list-29 footer-3 mt-lg-0 mt-5">
+                    <h6 class="footer-title-29">Head Office</h6>
+                    <p>
+                        Rosaria Banking<br>
+                        13 Bank Lane<br>
+                        London, United Kingdom
+                    </p>
+                    <p>+44 20 7123 4567</p>
+                    <p>support@rosariabanking.co.uk</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-list-29 footer-4 mt-lg-0 mt-5">
+                    <h6 class="footer-title-29">Customer Services</h6>
+                    <p>Secure Banking</p>
+                    <p>24/7 Support</p>
+                    <p>Online Banking Services</p>
+                </div>
+
+            </div>
 
         </div>
+    </div>
 
-    </footer>
+    <section class="w3l-copyright text-center">
+        <div class="container">
+            <p class="copy-footer-29">
+                © 2026 Rosaria Banking. All Rights Reserved.
+            </p>
+        </div>
+    </section>
+</section>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Dashboard JS -->
-    <script src="/static/assets/js/scripts.js"></script>
+    <script src="{{ url_for('static', filename='user/assets/js/scripts.js') }}"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    const btn = document.getElementById('theme-toggle');
+
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+
+    document.body.classList.add(savedTheme + '-mode');
+
+    updateButton();
+
+    btn.addEventListener('click', function () {
+
+        if (document.body.classList.contains('dark-mode')) {
+            document.body.classList.remove('dark-mode');
+            document.body.classList.add('light-mode');
+            localStorage.setItem('theme', 'light');
+        } else {
+            document.body.classList.remove('light-mode');
+            document.body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark');
+        }
+
+        updateButton();
+    });
+
+    function updateButton() {
+        if (document.body.classList.contains('dark-mode')) {
+            btn.innerHTML = '☀️ Light Mode';
+        } else {
+            btn.innerHTML = '🌙 Dark Mode';
+        }
+    }
+});
+</script>
 
 </body>
 

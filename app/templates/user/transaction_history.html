@@ -45,6 +45,9 @@ Transaction History | Rosaria Banking
                         <tr>
                             <th>Transaction Type</th>
                             <th>Transaction Date</th>
+                            <th>Transaction Time</th>
+                            <th>Transaction ID</th>
+                            <th>Recipient Name</th>
                             <th>Amount</th>
                             <th>Account / Card Number</th>
                         </tr>
@@ -57,7 +60,10 @@ Transaction History | Rosaria Banking
 
                             <tr>
                                 <td>{{ transaction.type }}</td>
-                                <td>{{ transaction.timestamp }}</td>
+                                <td>{{ transaction.timestamp.date() }}</td>
+                                <td>{{ transaction.timestamp.time() }}</td>
+                                <td>{{ transaction.id }}</td>
+                                <td>{{ transaction.recipient_name }}</td>
                                 <td>£{{ transaction.amount }}</td>
                                 <td>{{ transaction.recipient_card_number }}</td>
                             </tr>
@@ -65,7 +71,7 @@ Transaction History | Rosaria Banking
                         {% else %}
 
                             <tr>
-                                <td colspan="4" class="text-center text-muted py-4">
+                                <td colspan="7" class="text-center text-muted py-4">
                                     No transactions available.
                                 </td>
                             </tr>

@@ -1,6 +1,7 @@
 from app import app, db
 from flask import render_template, session, request, redirect, url_for, flash
-from app.models.user import User, Transaction
+from app.models.user import User
+from app.models.transaction import Transaction
 
 
 @app.route('/deposit', methods=['GET', 'POST'])
@@ -23,15 +24,15 @@ def deposit():
                user.balance += amount 
 
                #Create Credit transaction record
-               Transaction = Transaction(
-                    user_id = user.user_id,
-                    recipient_name = user.full_name,
-                    recipient_card_number = user.card_number
-                    amount = amount
-                    type - "Credit - Deposit"
+               transaction = Transaction(
+                    user_id=user.user_id,
+                    recipient_name=user.full_name,
+                    recipient_card_number=user.card_number,
+                    amount=amount,
+                    type="Credit - Deposit"
                )
 
-               db.session.add(Transaction)
+               db.session.add(transaction)
                db.session.commit()
 
                flash(f'Succesfully Deposited £{amount:.2f} to your account.', 'success')

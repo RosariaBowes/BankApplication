@@ -5,3 +5,6 @@ from .services import services_page
 from .register import register_page
 from .login import login
 from app.routes.root import *
+from app.routes.root.user.dashboard import *
+from app.routes.root.user.transfer import *
+from app.routes.root.user.deposit import *

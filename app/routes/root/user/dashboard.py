@@ -9,7 +9,7 @@ def dashboard():
                       
     if user_id:
         #Rtetrieve user from database 
-        user = User.query.get('user_id')
+        user = User.query.get(user_id)
         return render_template('user/index.html', user=user)
     else:
         flash('Please log in first, before you can access your dashboard', 'danger')

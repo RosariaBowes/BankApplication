@@ -6,80 +6,56 @@ My Dashboard | Rosaria Banking
 
 {% block content %}
 
-<header class="py-5">
-
+<header class="py-5 dashboard-hero">
     <div class="container px-lg-5">
+        <div class="row align-items-center g-5">
 
-        <div class="row row-cols-1 row-cols-md-2 text-center">
-
-            <div class="Wrap">
-
-                <div class="Base">
-
-                    <div class="Inner-wrap">
-
-                        <!-- Keep Existing Card SVG Structure -->
-
-                        <!-- Card Number -->
-                        <div class="Card-number">
-                            <ul>
-                                <li id="first-li">
-                                    {{ user.card_number|insert_hyphens }}
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Account Holder -->
-                        <div>
-                            <h3>{{ user.full_name }}</h3>
-                        </div>
-
+            <div class="col-lg-6">
+                <div class="bank-card">
+                    <div class="card-header">
+                        <h3>Rosaria Banking</h3>
+                        <i class="bi bi-credit-card-2-front-fill"></i>
                     </div>
 
-                </div>
+                    <div class="chip">
+                        <i class="bi bi-credit-card-fill"></i>
+                    </div>
 
+                    <div class="card-number">
+                        {{ user.card_number|insert_hyphens }}
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="holder">
+                            <span>Card Holder</span>
+                            <h5>{{ user.full_name }}</h5>
+                        </div>
+
+                        <div class="expiry">
+                            <span>Expiry</span>
+                            <h5>08/36</h5>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="box-wrap">
-
-                <div class="box-wrap-grid m-5">
-
-                    <div class="icon">
-                        <span class="fa fa-cc-visa"></span>
-                    </div>
-
-                    <div class="info">
-
-                        <p class="fs-4">
-                            Available Balance
-                        </p>
-
-                        <h2>
-                            £{{ "{:,.2f}".format(user.balance) }}
-                        </h2>
-
-                    </div>
-
-                    <p class="mt-4 fs-5">
-
-                        Welcome to your Rosaria Banking online dashboard.
-
-                        Your card number serves as your account reference number for
-                        transactions and account services.
-
-                        Use your dashboard to securely manage transfers, deposits,
-                        account activity, exchange rates, and customer support services.
-
-                    </p>
-
+            <div class="col-lg-6 text-center">
+                <div class="info">
+                    <p class="fs-4">Available Balance</p>
+                    <h2>£{{ "{:,.2f}".format(user.balance) }}</h2>
                 </div>
 
+                <p class="mt-4 fs-5 dashboard-welcome-text">
+                    Welcome to your Rosaria Banking online dashboard.
+                    Your card number serves as your account reference number for
+                    transactions and account services. Use your dashboard to securely
+                    manage transfers, deposits, account activity, exchange rates,
+                    and customer support services.
+                </p>
             </div>
 
         </div>
-
     </div>
-
 </header>
 
 <section class="pt-4">

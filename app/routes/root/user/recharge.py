@@ -1,12 +1,13 @@
 from app import app, db
 from flask import render_template, session, redirect, request, flash, url_for
-from app.models.user import User, Transaction
+from app.models.user import User
+from app.models.transaction import Transaction
 
 
 
 @app.route('/recharge', methods=['GET', 'POST'])
 def recharge():
-     user_id = session.get(user_id)
+     user_id = session.get('user_id')
      if user_id:
           user = User.query.get(user_id)
 
@@ -30,7 +31,7 @@ def recharge():
 
                Transaction = Transaction(
                     user_id = user.id,
-                    recipien_name = user.full_name,
+                    recipient_name = user.full_name,
                     recipient_card_number = user.card_number,
                     amount = total_amount, 
                     type = "Debit - Airtime Purchase"

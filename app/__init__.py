@@ -21,9 +21,22 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 
+from app.routes.root import *
+from app.models.user import *
 from app.models.user import insert_hyphens
 app.jinja_env.filters['insert_hyphens'] = insert_hyphens
 
-from app.routes.root import *
-from app.models.user import *
-from .routes.root.user.reciept import *
+from .routes.root.user.receipt import *
+from .routes.root.user.dashboard import *
+from .routes.root.user.deposit import *
+from .routes.root.user.transfer import *
+from .routes.root.user.exchange import *
+from .routes.root.user.recharge import *
+from .routes.root.user.transaction_history import *
+from .routes.root.user.receipt import *
+from .routes.root.user.accounts import *
+from .routes.root.user.accounts import *
+from .routes.root.user.cards import *
+from .routes.root.user.profile import *
+
+

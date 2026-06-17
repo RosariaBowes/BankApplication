@@ -16249,11 +16249,31 @@ span:not(.fa):not(.fas):not(.far) {
 }
 
 /* Main text */
-body,
-p,
-li {
-  color: var(--rosaria-muted) !important;
-  background: #fff !important;
+body {
+  color: #4f5d75;
+}
+
+.w3l-features p,
+.w3l-services p,
+.w3l-statistics p,
+.w3l-index3 p,
+.w3l-aboutblock p {
+  color: #b8c0d4 !important;
+}
+
+.w3l-features h3,
+.w3l-services h3,
+.w3l-statistics h3,
+.w3l-index3 h3,
+.w3l-aboutblock h3 {
+  color: #d4a437 !important;
+}
+
+.fa,
+.fas,
+.far,
+.fab {
+  color: #d4a437 !important;
 }
 
 /* Headings that should be gold */
@@ -16602,4 +16622,23 @@ input[type="submit"] {
   padding: 18px 60px;
   font-weight: 700;
   cursor: pointer;
+}
+
+/* Fix homepage grey text boxes */
+.w3l-stats p,
+.w3l-mobile-content p,
+.w3l-features p,
+.w3l-services p,
+.w3l-content-4 p {
+  background: transparent !important;
+  color: #cbd5e1 !important;
+}
+
+/* Keep headings gold */
+.w3l-stats h3,
+.w3l-mobile-content h3,
+.w3l-features h3,
+.w3l-services h3,
+.w3l-content-4 h3 {
+  color: #c9a227 !important;
 }
