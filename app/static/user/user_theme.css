@@ -147,3 +147,130 @@ body.dark-mode .bg-light.border-bottom {
 body.dark-mode .navbar {
   background: #05080f !important;
 }
+
+/* Match logged-in banking pages to public home theme */
+
+.navbar {
+  background: var(--navy) !important;
+}
+
+.navbar-brand,
+.navbar-brand i,
+.nav-link,
+.nav-link i {
+  color: #ffffff !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--gold) !important;
+}
+
+.bg-light.border-bottom {
+  background: #ffffff !important;
+  border-bottom: 3px solid var(--gold) !important;
+}
+
+body.dark-mode .bg-light.border-bottom {
+  background: #111827 !important;
+}
+
+.card {
+  background: #ffffff !important;
+  border-radius: 18px !important;
+  border: none !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+}
+
+.card-header {
+  background: var(--navy) !important;
+  color: #ffffff !important;
+  border-bottom: 3px solid var(--gold) !important;
+}
+
+.card-header h1,
+.card-header h2,
+.card-header h3,
+.card-header h4,
+.card-header h5 {
+  color: #ffffff !important;
+}
+
+.feature {
+  background: var(--gold) !important;
+  color: var(--navy) !important;
+}
+
+.feature i {
+  color: var(--navy) !important;
+}
+
+.btn-primary,
+.btn-outline-primary {
+  background: var(--gold) !important;
+  border: none !important;
+  color: var(--navy) !important;
+}
+
+.btn-primary:hover,
+.btn-outline-primary:hover {
+  background: var(--gold-dark) !important;
+  color: #ffffff !important;
+}
+
+section a,
+.card a {
+  color: var(--navy);
+  text-decoration: none;
+}
+
+section a:hover,
+.card a:hover {
+  color: var(--gold);
+}
+
+.table thead,
+.table-light {
+  background: var(--navy) !important;
+  color: #ffffff !important;
+}
+
+.table th {
+  color: #ffffff !important;
+}
+
+.footer-29,
+.w3l-footer-29-main,
+.w3l-copyright {
+  background: var(--navy) !important;
+  color: #ffffff !important;
+}
+
+.footer-title-29 {
+  color: var(--gold) !important;
+}
+
+.footer-29 a,
+.w3l-footer-29-main a {
+  color: #ffffff !important;
+}
+
+.footer-29 a:hover,
+.w3l-footer-29-main a:hover {
+  color: var(--gold) !important;
+}
+
+.badge.bg-success {
+  background: var(--gold) !important;
+  color: var(--navy) !important;
+}
+
+.bank-card {
+  background: linear-gradient(
+    135deg,
+    var(--navy) 0%,
+    #132a63 55%,
+    var(--gold) 100%
+  ) !important;
+  border: 1px solid var(--gold);
+}
