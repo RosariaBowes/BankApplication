@@ -8,3 +8,4 @@ from app.routes.root import *
 from app.routes.root.user.dashboard import *
 from app.routes.root.user.transfer import *
 from app.routes.root.user.deposit import *
+from app.routes.root.user.recharge import *

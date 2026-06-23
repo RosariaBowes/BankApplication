@@ -1,0 +1,242 @@
+:root {
+  --navy: #0d1b3e;
+  --gold: #d4af37;
+  --gold-dark: #b89018;
+  --white: #ffffff;
+  --bg: #f5f7fa;
+  --text: #1f2937;
+  --muted: #6b7280;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Navbar */
+
+.navbar {
+  background: var(--white) !important;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-brand {
+  color: var(--navy) !important;
+  font-weight: 700;
+}
+
+.nav-link {
+  color: var(--navy) !important;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: var(--gold) !important;
+}
+
+/* Dashboard Hero */
+
+.dashboard-hero {
+  padding: 60px 0;
+}
+
+.dashboard-welcome-text {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* Bank Card */
+
+.bank-card {
+  max-width: 560px;
+  border-radius: 24px;
+  padding: 32px;
+  color: white;
+  background: linear-gradient(
+    135deg,
+    #050505 0%,
+    #111111 45%,
+    #d4af37 46%,
+    #b89018 100%
+  );
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.bank-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.bank-card .chip {
+  margin: 40px 0;
+  font-size: 2rem;
+  color: var(--gold);
+}
+
+.bank-card .card-number {
+  font-size: 2rem;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.bank-card .card-footer {
+  display: flex;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.bank-card span {
+  color: var(--gold);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.bank-card h3,
+.bank-card h5 {
+  color: white;
+}
+
+/* Service Cards */
+
+.feature-card {
+  background: white;
+  border: none;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card i {
+  color: var(--gold);
+  font-size: 2rem;
+}
+
+.feature-card h3 {
+  color: var(--navy);
+  margin-top: 15px;
+}
+
+/* Stats */
+
+.stat-card {
+  background: white;
+  border: none;
+  border-radius: 16px;
+  min-height: 180px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.stat-card h2 {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* Tables */
+
+.table {
+  background: white;
+}
+
+.table thead {
+  background: var(--gold);
+}
+
+.table th {
+  color: var(--navy);
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+/* Recent Activity */
+
+.activity-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.activity-header {
+  background: var(--gold);
+  color: var(--navy);
+  padding: 20px;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* Buttons */
+
+.btn-primary {
+  background: var(--navy);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #14295e;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--navy);
+  border: none;
+}
+
+.btn-gold:hover {
+  background: var(--gold-dark);
+  color: white;
+}
+
+/* Forms */
+
+.form-control {
+  border-radius: 12px;
+}
+
+.form-control:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
+}
+
+/* Cards */
+
+.card {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Dark Mode */
+
+body.dark-mode {
+  --bg: #0f172a;
+  --white: #111827;
+  --text: #f3f4f6;
+  --muted: #cbd5e1;
+}
+
+body.dark-mode .card,
+body.dark-mode .feature-card,
+body.dark-mode .activity-card,
+body.dark-mode .stat-card {
+  background: #111827;
+  color: white;
+}
+
+body.dark-mode .table {
+  color: white;
+}

@@ -7,6 +7,7 @@ from app.models.transaction import Transaction
 
 @app.route('/recharge', methods=['GET', 'POST'])
 def recharge():
+     print("RECHARGE ROUTE LOADED")
      user_id = session.get('user_id')
      if user_id:
           user = User.query.get(user_id)
@@ -29,7 +30,7 @@ def recharge():
                #Update database 
                db.session.commit()
 
-               Transaction = Transaction(
+               transaction = Transaction(
                     user_id = user.id,
                     recipient_name = user.full_name,
                     recipient_card_number = user.card_number,
@@ -37,7 +38,7 @@ def recharge():
                     type = "Debit - Airtime Purchase"
                )
 
-               db.session.add(Transaction)
+               db.session.add(transaction)
                db.session.commit()
 
                return render_template('user/recharge_success.html', amount=total_amount, discount=discount)

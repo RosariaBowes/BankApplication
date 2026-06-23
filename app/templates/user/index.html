@@ -250,4 +250,94 @@ My Dashboard | Rosaria Banking
 
 </section>
 
+<div class="container mt-5">
+    <div class="row g-4 text-center">
+
+        <div class="col-md">
+            <div class="card shadow border-0 p-4 h-100">
+                <h5>Total Transactions</h5>
+                <h2>{{ total_transactions }}</h2>
+            </div>
+        </div>
+
+        <div class="col-md">
+            <div class="card shadow border-0 p-4 h-100">
+                <h5>Current Balance</h5>
+                <h2>£{{ "{:,.2f}".format(user.balance) }}</h2>
+            </div>
+        </div>
+
+        <div class="col-md">
+            <div class="card shadow border-0 p-4 h-100">
+                <h5>Total Deposited</h5>
+                <h2>£{{ "{:,.2f}".format(total_deposited) }}</h2>
+            </div>
+        </div>
+
+        <div class="col-md">
+            <div class="card shadow border-0 p-4 h-100">
+                <h5>Total Sent</h5>
+                <h2>£{{ "{:,.2f}".format(total_sent) }}</h2>
+            </div>
+        </div>
+
+        <div class="col-md">
+            <div class="card shadow border-0 p-4 h-100">
+                <h5>Total Airtime</h5>
+                <h2>£{{ "{:,.2f}".format(total_airtime) }}</h2>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container mt-5">
+
+    <div class="card shadow border-0">
+
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Recent Activity</h4>
+        </div>
+
+        <div class="card-body">
+
+            {% for transaction in recent_transactions %}
+
+                <div class="d-flex justify-content-between border-bottom py-2">
+
+                    <div>
+                        {% if 'Credit' in transaction.type %}
+                            <span class="badge bg-success">{{ transaction.type }}</span>
+
+                        {% elif 'Debit' in transaction.type %}
+                            <span class="badge bg-danger">{{ transaction.type }}</span>
+
+                        {% else %}
+                            <span class="badge bg-secondary">{{ transaction.type }}</span>
+                        {% endif %}
+                        <small class="text-muted">
+                            {{ transaction.timestamp.strftime('%d %b %Y %H:%M') }}
+                        </small>
+                    </div>
+
+                    <div>
+                        £{{ "{:,.2f}".format(transaction.amount) }}
+                    </div>
+
+                </div>
+
+            {% else %}
+
+                <p class="text-muted mb-0">
+                    No recent transactions yet.
+                </p>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</div>
+
 {% endblock %}

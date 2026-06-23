@@ -35,7 +35,6 @@ from .routes.root.user.recharge import *
 from .routes.root.user.transaction_history import *
 from .routes.root.user.receipt import *
 from .routes.root.user.accounts import *
-from .routes.root.user.accounts import *
 from .routes.root.user.cards import *
 from .routes.root.user.profile import *
 
