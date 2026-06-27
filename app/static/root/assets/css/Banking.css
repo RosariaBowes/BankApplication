@@ -237,36 +237,80 @@ p,
   color: white !important;
 }
 
-/* BUTTONS */
+/*************************
+    BUTTONS
+**************************/
 
+.btn-gold,
 .btn-primary,
-.btn-warning,
-.btn-outline-warning,
-.btn-gold {
-  background: linear-gradient(135deg, var(--gold-dark), var(--gold)) !important;
-  border: none !important;
-  color: var(--navy) !important;
+.btn-warning {
+  background: linear-gradient(135deg, #c9962b, #e4b744);
+
+  color: #ffffff !important;
+
+  border: none;
+
+  border-radius: 14px;
+
+  height: 52px;
+
+  padding: 0 30px;
+
   font-weight: 700;
-  border-radius: 12px;
-  padding: 14px 30px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  transition: 0.25s;
+
+  box-shadow: 0 10px 20px rgba(201, 150, 43, 0.2);
 }
 
-.btn-outline-primary,
-.btn-light-outline {
-  background: transparent !important;
-  border: 1px solid var(--gold) !important;
-  color: var(--navy) !important;
-  font-weight: 700;
-  border-radius: 12px;
-  padding: 14px 30px;
-}
-
-.btn-primary:hover,
-.btn-warning:hover,
 .btn-gold:hover,
-.btn-outline-primary:hover {
-  background: var(--navy) !important;
-  color: white !important;
+.btn-primary:hover,
+.btn-warning:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 15px 30px rgba(201, 150, 43, 0.35);
+
+  color: #ffffff !important;
+}
+
+.btn-outline-warning {
+  background: transparent;
+
+  border: 2px solid var(--gold);
+
+  color: var(--gold) !important;
+
+  border-radius: 14px;
+
+  height: 52px;
+
+  padding: 0 28px;
+
+  font-weight: 700;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  transition: 0.25s;
+}
+
+.btn-outline-warning:hover {
+  background: var(--gold);
+
+  color: #ffffff !important;
 }
 
 /* SERVICES */
@@ -493,23 +537,47 @@ textarea {
   transform: translateY(-4px);
 }
 
-/* DARK MODE */
+/*************************
+    DARK NAVBAR
+**************************/
 
 body.dark-mode .navbar,
-body.dark-mode #site-header,
-body.dark-mode .card,
-body.dark-mode .area-box,
-body.dark-mode .stat-card,
-body.dark-mode .activity-card,
-body.dark-mode .feature-strip,
-body.dark-mode .form-control,
-body.dark-mode .form-select {
-  background: var(--white) !important;
-  color: var(--text) !important;
+body.dark-mode #site-header {
+  background: #0b1324 !important;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-body.dark-mode .table {
-  color: white !important;
+body.dark-mode .navbar-brand {
+  color: #ffffff !important;
+}
+
+body.dark-mode .navbar-brand i,
+body.dark-mode .navbar-brand span {
+  color: var(--gold) !important;
+}
+
+body.dark-mode .nav-link {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+  color: var(--gold) !important;
+}
+
+body.dark-mode .btn-gold {
+  color: #ffffff !important;
+}
+
+body.dark-mode .btn-outline-warning {
+  color: var(--gold) !important;
+
+  border-color: var(--gold);
+}
+
+body.dark-mode .btn-outline-warning:hover {
+  color: #ffffff !important;
 }
 
 /* RESPONSIVE */
@@ -1047,4 +1115,556 @@ section {
   border-radius: 12px;
   border: 1px solid var(--border);
   padding: 14px 16px;
+}
+
+/* ===========================
+   DARK MODE NAVBAR
+=========================== */
+
+body.dark-mode .navbar {
+  background: #101827 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .navbar-brand,
+body.dark-mode .navbar-brand span {
+  color: var(--gold) !important;
+}
+
+body.dark-mode .nav-link {
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-weight: 600;
+}
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+  color: var(--gold) !important;
+}
+
+body.dark-mode .nav-link::after {
+  background: var(--gold);
+}
+
+body.dark-mode .btn-gold {
+  color: #fff !important;
+}
+
+body.dark-mode .btn-outline-warning {
+  background: transparent;
+  color: var(--gold) !important;
+  border: 2px solid var(--gold);
+}
+
+body.dark-mode .btn-outline-warning:hover {
+  background: var(--gold);
+  color: #081a34 !important;
+}
+
+.btn-gold,
+.btn-outline-warning {
+  height: 52px;
+  padding: 0 26px;
+
+  border-radius: 14px;
+
+  font-weight: 700;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  transition: 0.25s ease;
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #c99621, #e3b23d);
+
+  border: none;
+
+  color: white;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 25px rgba(201, 150, 33, 0.35);
+}
+
+/* Fix outline primary buttons to match Rosaria theme */
+.btn-outline-primary {
+  border: 2px solid var(--gold) !important;
+  color: var(--gold) !important;
+  background: transparent !important;
+}
+
+.btn-outline-primary:hover {
+  background: var(--gold) !important;
+  color: #ffffff !important;
+  border-color: var(--gold) !important;
+}
+
+body.dark-mode .btn-outline-primary {
+  border-color: var(--gold) !important;
+  color: var(--gold) !important;
+}
+
+body.dark-mode .btn-outline-primary:hover {
+  background: var(--gold) !important;
+  color: #ffffff !important;
+}
+
+/* ===========================
+   OVERRIDE SECONDARY BUTTONS
+=========================== */
+
+.btn-outline-primary {
+  background: #ffffff !important;
+
+  color: var(--navy) !important;
+
+  border: none !important;
+
+  border-radius: 14px;
+
+  height: 52px;
+
+  padding: 0 30px;
+
+  font-weight: 700;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.btn-outline-primary:hover {
+  background: var(--gold) !important;
+
+  color: #ffffff !important;
+
+  transform: translateY(-2px);
+}
+
+body.dark-mode .btn-outline-primary {
+  background: #ffffff !important;
+
+  color: var(--navy) !important;
+
+  border: none !important;
+}
+
+body.dark-mode .btn-outline-primary:hover {
+  background: var(--gold) !important;
+
+  color: #ffffff !important;
+}
+
+/* ===========================
+   DARK MODE TEXT FIXES
+=========================== */
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode .title-big,
+body.dark-mode .title-head,
+body.dark-mode .area-box h3 {
+  color: #ffffff !important;
+}
+
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode span:not(.counter) {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+body.dark-mode .title-small,
+body.dark-mode .sub-title {
+  color: var(--gold) !important;
+}
+
+body.dark-mode .area-box,
+body.dark-mode .contact-infos,
+body.dark-mode .form-inner-cont {
+  background: #182234 !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .area-box h3 {
+  color: white !important;
+}
+
+body.dark-mode a {
+  color: var(--gold);
+}
+
+body.dark-mode a:hover {
+  color: #ffffff;
+}
+
+body.dark-mode .counter {
+  color: var(--gold) !important;
+}
+
+body.dark-mode .stats_info h3 {
+  color: white !important;
+}
+
+/* =========================================================
+   FINAL VISUAL POLISH OVERRIDES
+========================================================= */
+
+/* Dashboard spacing */
+.dashboard-hero {
+  padding: 60px 0 45px !important;
+}
+
+.dashboard-hero .bank-card {
+  max-width: 620px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-hero .bank-card {
+    max-width: 92%;
+  }
+}
+
+/* About stats cards */
+.stats_info {
+  min-height: 170px;
+  padding: 28px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats_info .counter {
+  margin-bottom: 14px;
+}
+
+.w3l-stats {
+  padding-top: 45px !important;
+}
+
+/* Better public page spacing */
+.w3l-index3,
+.w3l-services,
+.w3l-content-4,
+.w3l-bottom-grids-6,
+.w3l-servicesblock3,
+.w3l-team,
+.w3l-clients-1 {
+  padding-top: 60px !important;
+  padding-bottom: 60px !important;
+}
+
+/* Team cards */
+.our-team {
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.our-team:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.18) !important;
+}
+
+.our-team img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  height: auto !important;
+  object-fit: cover;
+}
+
+/* Dark mode readability fixes */
+body.dark-mode .our-team .title,
+body.dark-mode .our-team h3,
+body.dark-mode .our-team h4,
+body.dark-mode .stats_info h3,
+body.dark-mode .area-box h4,
+body.dark-mode .area-box .title-head,
+body.dark-mode .content4-right-info h6,
+body.dark-mode .content4-right-info a {
+  color: #ffffff !important;
+}
+
+body.dark-mode .our-team .post,
+body.dark-mode .title-small,
+body.dark-mode .section-label {
+  color: var(--gold) !important;
+}
+
+body.dark-mode .stats_info,
+body.dark-mode .our-team,
+body.dark-mode .testimonial,
+body.dark-mode .area-box {
+  background: #111827 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Light mode public page title cleanup */
+.title-big,
+.area-box h4,
+.our-team .title {
+  color: var(--navy) !important;
+}
+
+.area-box a,
+.content4-right-info a {
+  color: var(--navy) !important;
+  text-decoration: none !important;
+}
+
+.area-box a:hover,
+.content4-right-info a:hover {
+  color: var(--gold) !important;
+}
+
+/* Contact page cleanup */
+.single-contact-infos {
+  margin-bottom: 28px;
+}
+
+.single-contact-infos h3 {
+  color: var(--navy) !important;
+}
+
+body.dark-mode .single-contact-infos h3 {
+  color: #ffffff !important;
+}
+
+body.dark-mode .contact-infos a,
+body.dark-mode .form-inner-cont a {
+  color: var(--gold) !important;
+}
+
+/* Header buttons */
+.btn-gold,
+.btn-primary,
+.btn-warning {
+  color: #ffffff !important;
+}
+
+.btn-outline-primary {
+  background: #ffffff !important;
+  color: var(--navy) !important;
+  border: none !important;
+}
+
+.btn-outline-primary:hover {
+  background: var(--gold) !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .btn-outline-primary {
+  background: #ffffff !important;
+  color: var(--navy) !important;
+}
+
+body.dark-mode .btn-outline-primary:hover {
+  background: var(--gold) !important;
+  color: #ffffff !important;
+}
+
+/* Dark navbar final readability */
+body.dark-mode .navbar-brand {
+  color: #ffffff !important;
+}
+
+body.dark-mode .navbar-brand i {
+  color: var(--gold) !important;
+}
+
+body.dark-mode .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+  color: var(--gold) !important;
+}
+
+/* ==========================================================
+   FINAL DASHBOARD POLISH
+========================================================== */
+
+/* -------------------------------
+   Dashboard Welcome Section
+-------------------------------- */
+
+body.dark-mode .dashboard-hero,
+body.dark-mode .dashboard-banner,
+body.dark-mode .welcome-section {
+  background: #0f172a !important;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .dashboard-hero h1,
+body.dark-mode .dashboard-banner h1,
+body.dark-mode .welcome-section h1 {
+  color: #ffffff !important;
+}
+
+body.dark-mode .dashboard-hero p,
+body.dark-mode .dashboard-banner p,
+body.dark-mode .welcome-section p {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* -------------------------------
+   Bank Card Position
+-------------------------------- */
+
+.dashboard-card,
+.card-preview {
+  margin-top: -40px;
+}
+
+/* -------------------------------
+   Transaction Cards
+-------------------------------- */
+
+body.dark-mode .activity-card,
+body.dark-mode .transaction-card,
+body.dark-mode .recent-activity {
+  background: #111827 !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 18px;
+
+  transition: 0.3s ease;
+}
+
+body.dark-mode .activity-card:hover,
+body.dark-mode .transaction-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* -------------------------------
+   Transaction Text
+-------------------------------- */
+
+body.dark-mode .transaction-title,
+body.dark-mode .transaction-name,
+body.dark-mode .transaction-date {
+  color: #ffffff !important;
+}
+
+body.dark-mode .amount,
+body.dark-mode .transaction-amount,
+body.dark-mode .money {
+  color: #ffffff !important;
+
+  font-weight: 700;
+}
+
+/* -------------------------------
+   Theme Toggle Button
+-------------------------------- */
+
+.theme-toggle {
+  background: linear-gradient(135deg, #198754, #28a745);
+
+  color: #ffffff !important;
+
+  border: none;
+
+  border-radius: 14px;
+
+  transition: 0.3s;
+}
+
+.theme-toggle:hover {
+  background: linear-gradient(135deg, #157347, #198754);
+
+  transform: translateY(-2px);
+}
+
+/* -------------------------------
+   Dashboard Cards
+-------------------------------- */
+
+.stat-card,
+.dashboard-widget,
+.dashboard-box {
+  border-radius: 18px;
+
+  transition: 0.3s ease;
+}
+
+.stat-card:hover,
+.dashboard-widget:hover,
+.dashboard-box:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* -------------------------------
+   Premium Scrollbar
+-------------------------------- */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f4f6fa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+
+  border-radius: 20px;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background: #d4a52b;
+}
+
+/* FIX USER DASHBOARD WELCOME BANNER */
+
+body.dark-mode .bg-light {
+  background: #0f172a !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .bg-light h1,
+body.dark-mode .bg-light h2,
+body.dark-mode .bg-light h3,
+body.dark-mode .bg-light p {
+  color: #ffffff !important;
+}
+
+body.dark-mode .bg-light p,
+body.dark-mode .bg-light .text-muted {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+body.dark-mode .border-bottom {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
