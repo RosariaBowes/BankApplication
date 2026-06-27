@@ -6,17 +6,28 @@ About Page | Rosaria Banking
 
 {% block content %}
 
-<!--/header-->
-<div class="inner-banner">
-</div>
+<section class="page-header">
 
-<section class="w3l-breadcrumb">
     <div class="container">
-        <ul class="breadcrumbs-custom-path">
-            <li><a href="index.html">Home</a></li>
-            <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> About Us</li>
-        </ul>
+
+        <h1>About Rosaria Banking</h1>
+
+        <p>
+            Trusted banking services for individuals and businesses across the United Kingdom.
+        </p>
+
+        <nav class="breadcrumb-nav">
+
+            <a href="{{ url_for('home_page') }}">Home</a>
+
+            <span>/</span>
+
+            <span>About</span>
+
+        </nav>
+
     </div>
+
 </section>
 
 <!-- home page about section -->

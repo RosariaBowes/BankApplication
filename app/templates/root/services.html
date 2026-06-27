@@ -6,19 +6,21 @@ Services | Rosaria Banking
 
 {% block content %}
 
-<!--/header-->
-<div class="inner-banner">
-</div>
-
-<section class="w3l-breadcrumb">
+<section class="page-header">
     <div class="container">
-        <ul class="breadcrumbs-custom-path">
-            <li><a href="{{ url_for('home_page') }}">Home</a></li>
-            <li class="active">
-                <span class="fa fa-arrow-right mx-2" aria-hidden="true"></span>
-                Services
-            </li>
-        </ul>
+
+        <h1>Our Banking Services</h1>
+
+        <p>
+            Secure digital banking, transfers, deposits, cards and customer support services.
+        </p>
+
+        <nav class="breadcrumb-nav">
+            <a href="{{ url_for('home_page') }}">Home</a>
+            <span>/</span>
+            <span>Services</span>
+        </nav>
+
     </div>
 </section>
 

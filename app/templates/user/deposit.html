@@ -6,88 +6,91 @@ Deposit Funds | Rosaria Banking
 
 {% block content %}
 
-<div class="container py-5">
+<section class="py-5">
+    <div class="container px-lg-5">
 
-    <div class="row justify-content-center">
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-8 text-center">
+                <p class="section-label">Deposit Funds</p>
+                <h1>Add money to your account</h1>
+                <p class="text-muted">
+                    Use your registered Rosaria Banking card to securely deposit funds.
+                </p>
+            </div>
+        </div>
 
-        <div class="col-lg-6">
+        <div class="row justify-content-center g-4">
 
-            <div class="card shadow border-0">
-
-                <div class="card-header bg-primary text-white text-center">
-                    <h4 class="mb-0">
-                        Deposit Funds
-                    </h4>
-                </div>
-
-                <div class="card-body p-4">
-
-                    <p class="text-muted text-center mb-4">
-                        Add funds securely to your Rosaria Banking account.
-                        Please enter your card details and deposit amount below.
+            <div class="col-lg-5">
+                <div class="card stat-card h-100 p-4 text-center">
+                    <i class="bi bi-wallet2 mb-3"></i>
+                    <h5>Current Balance</h5>
+                    <h2>£{{ "{:,.2f}".format(user.balance) }}</h2>
+                    <p class="text-muted mb-0">
+                        Available in your Rosaria Banking account.
                     </p>
+                </div>
+            </div>
 
-                    <form action="{{ url_for('deposit') }}" method="post">
+            <div class="col-lg-7">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="mb-0">Deposit Details</h4>
+                    </div>
 
-                        <div class="mb-3">
+                    <div class="card-body p-4">
 
-                            <label class="form-label fw-bold">
-                                Card Number
-                            </label>
+                        <form action="{{ url_for('deposit') }}" method="post">
 
-                            <input class="form-control"
-                                   type="text"
-                                   name="card_number"
-                                   placeholder="1234 5678 9012 3456"
-                                   required>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Card Number</label>
+                                <input class="form-control"
+                                       type="text"
+                                       name="card_number"
+                                       placeholder="1234 5678 9012 3456"
+                                       required>
+                            </div>
 
-                        </div>
+                            <div class="mb-4">
+                                <label class="form-label fw-bold">Deposit Amount (£)</label>
+                                <input class="form-control"
+                                       type="number"
+                                       name="amount"
+                                       min="1"
+                                       step="1"
+                                       placeholder="1000"
+                                       required>
+                            </div>
 
-                        <div class="mb-4">
+                            <div class="d-grid">
+                                <button class="btn btn-primary btn-lg" type="submit">
+                                    <i class="bi bi-cash-stack me-2"></i>
+                                    Deposit Funds
+                                </button>
+                            </div>
 
-                            <label class="form-label fw-bold">
-                                Deposit Amount (£)
-                            </label>
+                        </form>
 
-                            <input class="form-control"
-                                   type="number"
-                                   name="amount"
-                                   min="1"
-                                   step="1"
-                                   placeholder="1000"
-                                   required>
-
-                        </div>
-
-                        <div class="d-grid">
-
-                            <button class="btn btn-primary btn-lg"
-                                    type="submit">
-
-                                Deposit Funds
-
-                            </button>
-
-                        </div>
-
-                    </form>
-
+                    </div>
                 </div>
 
-                <div class="card-footer text-center bg-light">
+                <div class="card mt-4 p-4">
+                    <h5>
+                        <i class="bi bi-shield-lock-fill me-2 gold-text"></i>
+                        Secure Deposits
+                    </h5>
 
-                    <small class="text-muted">
-                        Deposits are processed securely through Rosaria Banking.
-                    </small>
-
+                    <ul class="mb-0 text-muted">
+                        <li>Deposits are processed securely through Rosaria Banking.</li>
+                        <li>Use your registered card number only.</li>
+                        <li>Your balance updates after a successful deposit.</li>
+                    </ul>
                 </div>
-
             </div>
 
         </div>
 
     </div>
-
-</div>
+</section>
 
 {% endblock %}

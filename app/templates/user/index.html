@@ -6,12 +6,13 @@ My Dashboard | Rosaria Banking
 
 {% block content %}
 
-<header class="py-5 dashboard-hero">
+<section class="dashboard-hero">
     <div class="container px-lg-5">
-        <div class="row align-items-center g-5">
 
-            <div class="col-lg-6">
-                <div class="bank-card">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 text-center">
+
+                <div class="bank-card mx-auto">
                     <div class="card-header">
                         <h3>Rosaria Banking</h3>
                         <i class="bi bi-credit-card-2-front-fill"></i>
@@ -26,318 +27,201 @@ My Dashboard | Rosaria Banking
                     </div>
 
                     <div class="card-footer">
-                        <div class="holder">
+                        <div>
                             <span>Card Holder</span>
                             <h5>{{ user.full_name }}</h5>
                         </div>
 
-                        <div class="expiry">
+                        <div>
                             <span>Expiry</span>
                             <h5>08/36</h5>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-lg-6 text-center">
-                <div class="info">
-                    <p class="fs-4">Available Balance</p>
-                    <h2>£{{ "{:,.2f}".format(user.balance) }}</h2>
+                <div class="mt-5">
+                    <p class="section-label">Available Balance</p>
+                    <h1 class="display-4 fw-bold">
+                        £{{ "{:,.2f}".format(user.balance) }}
+                    </h1>
+
+                    <p class="text-muted mt-3">
+                        Manage transfers, deposits, cards and account activity securely
+                        from your Rosaria Banking dashboard.
+                    </p>
                 </div>
 
-                <p class="mt-4 fs-5 dashboard-welcome-text">
-                    Welcome to your Rosaria Banking online dashboard.
-                    Your card number serves as your account reference number for
-                    transactions and account services. Use your dashboard to securely
-                    manage transfers, deposits, account activity, exchange rates,
-                    and customer support services.
-                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container px-lg-5">
+        <div class="row g-4 text-center">
+
+            <div class="col-md">
+                <div class="card stat-card h-100 p-4">
+                    <i class="bi bi-wallet2 mb-3"></i>
+                    <h5>Balance</h5>
+                    <h2>£{{ "{:,.2f}".format(user.balance) }}</h2>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="card stat-card h-100 p-4">
+                    <i class="bi bi-arrow-down-circle mb-3"></i>
+                    <h5>Deposited</h5>
+                    <h2>£{{ "{:,.2f}".format(total_deposited) }}</h2>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="card stat-card h-100 p-4">
+                    <i class="bi bi-arrow-up-circle mb-3"></i>
+                    <h5>Sent</h5>
+                    <h2>£{{ "{:,.2f}".format(total_sent) }}</h2>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="card stat-card h-100 p-4">
+                    <i class="bi bi-clock-history mb-3"></i>
+                    <h5>Transactions</h5>
+                    <h2>{{ total_transactions }}</h2>
+                </div>
             </div>
 
         </div>
     </div>
-</header>
+</section>
 
-<section class="pt-4">
-
+<section class="py-5 bg-white-section">
     <div class="container px-lg-5">
 
         <div class="text-center mb-5">
-
-            <h2 class="fw-bold">
-                Banking Services
-            </h2>
-
-            <p class="text-muted">
-                Access all Rosaria Banking services from one secure dashboard.
-            </p>
-
+            <p class="section-label">Quick Actions</p>
+            <h2>Banking services</h2>
         </div>
 
-        <div class="row gx-lg-5">
+        <div class="row g-4">
 
-            <!-- Transfer -->
-
-            <div class="col-lg-6 col-xxl-4 mb-5">
-
-                <div class="card bg-light border-0 h-100 shadow-sm">
-
-                    <div class="card-body text-center p-4 p-lg-5">
-
-                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4">
-                            <i class="bi bi-arrow-left-right fs-2"></i>
-                        </div>
-
-                        <h4 class="fw-bold">
-                            <a href="{{ url_for('transfer') }}">
-                                Transfer Funds
-                            </a>
-                        </h4>
-
-                        <p>
-                            Send money securely to another account.
-                        </p>
-
+            <div class="col-lg-4 col-md-6">
+                <a href="{{ url_for('transfer') }}" class="text-decoration-none">
+                    <div class="card service-card h-100">
+                        <i class="bi bi-arrow-left-right"></i>
+                        <h4>Transfer Funds</h4>
+                        <p>Send money securely to another Rosaria account.</p>
                     </div>
-
-                </div>
-
+                </a>
             </div>
 
-            <!-- Deposit -->
-
-            <div class="col-lg-6 col-xxl-4 mb-5">
-
-                <div class="card bg-light border-0 h-100 shadow-sm">
-
-                    <div class="card-body text-center p-4 p-lg-5">
-
-                        <div class="feature bg-success text-white rounded-3 mb-4">
-                            <i class="bi bi-cash-stack fs-2"></i>
-                        </div>
-
-                        <h4 class="fw-bold">
-                            <a href="{{ url_for('deposit') }}">
-                                Deposit Funds
-                            </a>
-                        </h4>
-
-                        <p>
-                            Add funds to your Rosaria Banking account.
-                        </p>
-
+            <div class="col-lg-4 col-md-6">
+                <a href="{{ url_for('deposit') }}" class="text-decoration-none">
+                    <div class="card service-card h-100">
+                        <i class="bi bi-cash-stack"></i>
+                        <h4>Deposit Funds</h4>
+                        <p>Add money to your Rosaria Banking account.</p>
                     </div>
-
-                </div>
-
+                </a>
             </div>
 
-            <!-- Recharge -->
-
-            <div class="col-lg-6 col-xxl-4 mb-5">
-
-                <div class="card bg-light border-0 h-100 shadow-sm">
-
-                    <div class="card-body text-center p-4 p-lg-5">
-
-                        <div class="feature bg-warning text-white rounded-3 mb-4">
-                            <i class="bi bi-wallet2 fs-2"></i>
-                        </div>
-
-                        <h4 class="fw-bold">
-                            <a href="{{ url_for('recharge') }}">
-                                Recharge Services
-                            </a>
-                        </h4>
-
-                        <p>
-                            Manage airtime, payments, and account top-ups.
-                        </p>
-
+            <div class="col-lg-4 col-md-6">
+                <a href="{{ url_for('recharge') }}" class="text-decoration-none">
+                    <div class="card service-card h-100">
+                        <i class="bi bi-phone"></i>
+                        <h4>Recharge</h4>
+                        <p>Purchase airtime and manage top-up payments.</p>
                     </div>
-
-                </div>
-
+                </a>
             </div>
 
-            <!-- Support -->
-
-            <div class="col-lg-6 col-xxl-4 mb-5">
-
-                <div class="card bg-light border-0 h-100 shadow-sm">
-
-                    <div class="card-body text-center p-4 p-lg-5">
-
-                        <div class="feature bg-info text-white rounded-3 mb-4">
-                            <i class="bi bi-headset fs-2"></i>
-                        </div>
-
-                        <h4 class="fw-bold">
-                            <a href="{{ url_for('contact_page') }}">
-                                Customer Support
-                            </a>
-                        </h4>
-
-                        <p>
-                            Contact our support team for assistance.
-                        </p>
-
+            <div class="col-lg-4 col-md-6">
+                <a href="{{ url_for('transaction_history') }}" class="text-decoration-none">
+                    <div class="card service-card h-100">
+                        <i class="bi bi-receipt"></i>
+                        <h4>Transaction History</h4>
+                        <p>Review deposits, transfers and account activity.</p>
                     </div>
-
-                </div>
-
+                </a>
             </div>
 
-            <!-- Transactions -->
-
-            <div class="col-lg-6 col-xxl-4 mb-5">
-
-                <div class="card bg-light border-0 h-100 shadow-sm">
-
-                    <div class="card-body text-center p-4 p-lg-5">
-
-                        <div class="feature bg-secondary text-white rounded-3 mb-4">
-                            <i class="bi bi-clock-history fs-2"></i>
-                        </div>
-
-                        <h4 class="fw-bold">
-                            <a href="{{ url_for('transaction_history') }}">
-                                Transaction History
-                            </a>
-                        </h4>
-
-                        <p>
-                            View recent transactions and account activity.
-                        </p>
-
+            <div class="col-lg-4 col-md-6">
+                <a href="{{ url_for('exchange_rate') }}" class="text-decoration-none">
+                    <div class="card service-card h-100">
+                        <i class="bi bi-currency-exchange"></i>
+                        <h4>Exchange Rates</h4>
+                        <p>View estimated currency exchange rates.</p>
                     </div>
-
-                </div>
-
+                </a>
             </div>
 
-            <!-- Exchange Rates -->
-
-            <div class="col-lg-6 col-xxl-4 mb-5">
-
-                <div class="card bg-light border-0 h-100 shadow-sm">
-
-                    <div class="card-body text-center p-4 p-lg-5">
-
-                        <div class="feature bg-dark text-white rounded-3 mb-4">
-                            <i class="bi bi-currency-exchange fs-2"></i>
-                        </div>
-
-                        <h4 class="fw-bold">
-                            <a href="{{ url_for('exchange_rate') }}">
-                                Exchange Rates
-                            </a>
-                        </h4>
-
-                        <p>
-                            Check current foreign exchange rates.
-                        </p>
-
+            <div class="col-lg-4 col-md-6">
+                <a href="{{ url_for('contact_page') }}" class="text-decoration-none">
+                    <div class="card service-card h-100">
+                        <i class="bi bi-headset"></i>
+                        <h4>Support</h4>
+                        <p>Contact customer support for assistance.</p>
                     </div>
-
-                </div>
-
+                </a>
             </div>
 
         </div>
 
     </div>
-
 </section>
 
-<div class="container mt-5">
-    <div class="row g-4 text-center">
+<section class="py-5">
+    <div class="container px-lg-5">
 
-        <div class="col-md">
-            <div class="card shadow border-0 p-4 h-100">
-                <h5>Total Transactions</h5>
-                <h2>{{ total_transactions }}</h2>
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">Recent Activity</h4>
             </div>
-        </div>
 
-        <div class="col-md">
-            <div class="card shadow border-0 p-4 h-100">
-                <h5>Current Balance</h5>
-                <h2>£{{ "{:,.2f}".format(user.balance) }}</h2>
-            </div>
-        </div>
+            <div class="card-body p-4">
 
-        <div class="col-md">
-            <div class="card shadow border-0 p-4 h-100">
-                <h5>Total Deposited</h5>
-                <h2>£{{ "{:,.2f}".format(total_deposited) }}</h2>
-            </div>
-        </div>
+                {% for transaction in recent_transactions %}
 
-        <div class="col-md">
-            <div class="card shadow border-0 p-4 h-100">
-                <h5>Total Sent</h5>
-                <h2>£{{ "{:,.2f}".format(total_sent) }}</h2>
-            </div>
-        </div>
+                    <div class="d-flex justify-content-between align-items-center border-bottom py-3">
 
-        <div class="col-md">
-            <div class="card shadow border-0 p-4 h-100">
-                <h5>Total Airtime</h5>
-                <h2>£{{ "{:,.2f}".format(total_airtime) }}</h2>
+                        <div>
+                            {% if 'Credit' in transaction.type %}
+                                <span class="badge bg-success mb-2">{{ transaction.type }}</span>
+                            {% elif 'Debit' in transaction.type %}
+                                <span class="badge bg-danger mb-2">{{ transaction.type }}</span>
+                            {% else %}
+                                <span class="badge bg-secondary mb-2">{{ transaction.type }}</span>
+                            {% endif %}
+
+                            <p class="mb-0">
+                                {{ transaction.recipient_name }}
+                            </p>
+
+                            <small class="text-muted">
+                                {{ transaction.timestamp.strftime('%d %b %Y %H:%M') }}
+                            </small>
+                        </div>
+
+                        <div class="fw-bold">
+                            £{{ "{:,.2f}".format(transaction.amount) }}
+                        </div>
+
+                    </div>
+
+                {% else %}
+
+                    <p class="text-muted mb-0">
+                        No recent transactions yet.
+                    </p>
+
+                {% endfor %}
+
             </div>
         </div>
 
     </div>
-</div>
-
-<div class="container mt-5">
-
-    <div class="card shadow border-0">
-
-        <div class="card-header bg-primary text-white">
-            <h4 class="mb-0">Recent Activity</h4>
-        </div>
-
-        <div class="card-body">
-
-            {% for transaction in recent_transactions %}
-
-                <div class="d-flex justify-content-between border-bottom py-2">
-
-                    <div>
-                        {% if 'Credit' in transaction.type %}
-                            <span class="badge bg-success">{{ transaction.type }}</span>
-
-                        {% elif 'Debit' in transaction.type %}
-                            <span class="badge bg-danger">{{ transaction.type }}</span>
-
-                        {% else %}
-                            <span class="badge bg-secondary">{{ transaction.type }}</span>
-                        {% endif %}
-                        <small class="text-muted">
-                            {{ transaction.timestamp.strftime('%d %b %Y %H:%M') }}
-                        </small>
-                    </div>
-
-                    <div>
-                        £{{ "{:,.2f}".format(transaction.amount) }}
-                    </div>
-
-                </div>
-
-            {% else %}
-
-                <p class="text-muted mb-0">
-                    No recent transactions yet.
-                </p>
-
-            {% endfor %}
-
-        </div>
-
-    </div>
-
-</div>
+</section>
 
 {% endblock %}
